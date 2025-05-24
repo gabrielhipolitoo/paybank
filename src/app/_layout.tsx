@@ -1,7 +1,7 @@
 import { SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
-import FormStepProvider from "@/context/formStep";
+import FormStepProvider from "@/context/formStepContext";
 
 SplashScreen.preventAutoHideAsync();
 

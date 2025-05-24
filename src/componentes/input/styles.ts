@@ -11,5 +11,6 @@ export const styles = StyleSheet.create({
     height: 70,
     fontSize: 18,
     marginBottom: 20,
+    color:colors.white["900"]
   },
 });
