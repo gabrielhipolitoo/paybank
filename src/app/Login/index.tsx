@@ -1,5 +1,6 @@
 import Input from "@/componentes/input";
 import ModalView from "@/componentes/ModalView";
+import PasswordForm from "@/componentes/PasswordForm";
 import { FormStateContext } from "@/context/formStepContext";
 import { styles } from "@/styles/stylesLogin";
 import { useContext, useState } from "react";
@@ -54,24 +55,7 @@ export default function Login() {
         </>
       )}
 
-      {formState === 2 && (
-        <>
-          <Input
-            secureTextEntry
-            value={value.password}
-            placeholder="Digite sua senha"
-          />
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.text}>Entrar</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={previousButton}
-            style={styles.buttonOutput}
-          >
-            <Text style={styles.text}>Voltar</Text>
-          </TouchableOpacity>
-        </>
-      )}
+      {formState === 2 && <PasswordForm />}
 
       <ModalView
         transparent
