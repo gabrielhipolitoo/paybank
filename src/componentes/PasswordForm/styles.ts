@@ -3,14 +3,21 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    padding: 25,
     flex: 1,
+    width: "90%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: colors.black["900"],
   },
 
-  header: {},
+  header: {
+    alignItems: "center",
+    margin: "auto",
+  },
+
+  iconUser: {
+    marginTop: 30,
+    marginBottom: 30,
+  },
 
   paragraph: {
     color: colors.white["900"],
@@ -18,5 +25,6 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "poppinsLight",
     fontWeight: "200",
+    marginBottom: 20,
   },
 });

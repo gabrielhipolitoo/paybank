@@ -1,6 +1,7 @@
 import Input from "@/componentes/input";
 import ModalView from "@/componentes/ModalView";
 import PasswordForm from "@/componentes/PasswordForm";
+import ViewDefault from "@/componentes/ViewDefault/ViewDefault";
 import { FormStateContext } from "@/context/formStepContext";
 import { styles } from "@/styles/stylesLogin";
 import { useContext, useState } from "react";
@@ -38,7 +39,7 @@ export default function Login() {
   }
   console.log(value);
   return (
-    <View style={styles.container}>
+    <ViewDefault style={styles.container}>
       {formState === 1 && (
         <>
           <Input
@@ -54,7 +55,7 @@ export default function Login() {
           </TouchableOpacity>
         </>
       )}
-
+        
       {formState === 2 && <PasswordForm />}
 
       <ModalView
@@ -65,6 +66,6 @@ export default function Login() {
         title={errorInput.title}
         text={errorInput.text}
       />
-    </View>
+    </ViewDefault>
   );
 }

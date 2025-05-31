@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     padding: 25,
     flex: 1,
     justifyContent: "space-between",
-    backgroundColor: colors.black["900"],
+    backgroundColor: "transparent",
   },
 
   title: {

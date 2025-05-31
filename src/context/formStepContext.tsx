@@ -16,13 +16,13 @@ export default function FormStepProvider({ children }: PropsContenxt) {
   const countChildrens = Children.count(children);
   function nextButton() {
     if (formState <= countChildrens) setFormState(formState + 1);
-  }
+  } 
 
   function previousButton() {
     if (formState > 1) setFormState(formState - 1);
   }
 
-  console.log(Children.count(children));
+  
 
   return (
     <FormStateContext.Provider

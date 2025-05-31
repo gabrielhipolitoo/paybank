@@ -6,13 +6,14 @@ import {
   LinkProps,
   RelativePathString,
   useRouter,
+  Route,
 } from "expo-router";
 import { styles } from "./styles";
 import { Text, TouchableOpacity } from "react-native";
 type ButtonProps = {
   text: string;
   typeButton?: "line" | "default";
-  redirection?: RelativePathString | undefined;
+  redirection?: Route;
 };
 
 export default function Button({ text, typeButton, redirection }: ButtonProps) {

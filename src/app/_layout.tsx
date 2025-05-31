@@ -2,7 +2,9 @@ import { SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 import FormStepProvider from "@/context/formStepContext";
-
+import { ImageBackground, StatusBar, View } from "react-native";
+import { styles } from "@/styles/styles";
+import { stylesGlobal } from "@/styles/global";
 SplashScreen.preventAutoHideAsync();
 
 export default function LayoutRoot() {
@@ -25,8 +27,10 @@ export default function LayoutRoot() {
     <FormStepProvider>
       <Stack screenOptions={{ title: "", headerShown: false }}>
         <Stack.Screen name="index" />
+        <Stack.Screen name="Home" />
         <Stack.Screen name="Login/index" />
       </Stack>
+      <StatusBar barStyle={"light-content"} />
     </FormStepProvider>
   );
 }
