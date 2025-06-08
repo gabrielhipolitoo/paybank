@@ -112,6 +112,6 @@ export const styles = StyleSheet.create({
   fieldpassSelected: {
     borderRadius: 10,
     padding: 10,
-    backgroundColor: "#000",
+    backgroundColor: "red",
   },
 });

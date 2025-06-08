@@ -52,26 +52,7 @@ export default function Password() {
     return null;
   }
 
-  function selectedButton() {
-    passwordFields.map(({ id }, fieldSelected) => {
-      statePass.map(({}, passwordSelected) => {
-        if (fieldSelected === passwordSelected) {
-          return (
-            <View key={id} style={styles.fieldpass}>
-              b
-            </View>
-          );
-        }
-      });
-
-      return (
-        <View key={id} style={styles.fieldpass}>
-          ff
-        </View>
-      );
-    });
-    return <Text>Value</Text>;
-  }
+  function selectedButton() {}
 
   return (
     <ViewDefault style={styles.containerPassword}>
@@ -84,7 +65,50 @@ export default function Password() {
         />
         <Text style={styles.paragraph}>Digite sua senha para acessar</Text>
 
-        <View style={styles.BoxPassword}>{selectedButton()}</View>
+        <View style={styles.BoxPassword}>
+          <View
+            style={
+              statePass.length === 1
+                ? styles.fieldpass
+                : styles.fieldpassSelected
+            }
+          ></View>
+          <View
+            style={
+              statePass.length === 2
+                ? styles.fieldpass
+                : styles.fieldpassSelected
+            }
+          ></View>
+          <View
+            style={
+              statePass.length === 3
+                ? styles.fieldpass
+                : styles.fieldpassSelected
+            }
+          ></View>
+          <View
+            style={
+              statePass.length === 4
+                ? styles.fieldpass
+                : styles.fieldpassSelected
+            }
+          ></View>
+          <View
+            style={
+              statePass.length === 5
+                ? styles.fieldpass
+                : styles.fieldpassSelected
+            }
+          ></View>
+          <View
+            style={
+              statePass.length === 6
+                ? styles.fieldpass
+                : styles.fieldpassSelected
+            }
+          ></View>
+        </View>
 
         <FlatList
           data={arrayNumber}

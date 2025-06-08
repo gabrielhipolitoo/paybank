@@ -17,7 +17,6 @@ export default function NumbersKeyBoard({
     if (statePass.length === 4) {
       return console.log("Valor ja esta preenchido");
     }
-
     const valueString = String(number);
     setStatePass((prevState) => [...prevState, valueString]);
   }
