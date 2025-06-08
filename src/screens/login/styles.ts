@@ -1,5 +1,6 @@
 import { colors } from "@/utils/colors";
 import { StyleSheet } from "react-native";
+import Password from "./password";
 
 export const styles = StyleSheet.create({
   container: {
@@ -21,7 +22,6 @@ export const styles = StyleSheet.create({
   input: {
     width: "100%",
   },
-
 
   text: {
     color: colors.white["900"],
@@ -75,6 +75,7 @@ export const styles = StyleSheet.create({
   },
 
   header: {
+    width: "90%",
     alignItems: "center",
     margin: "auto",
   },
@@ -91,5 +92,26 @@ export const styles = StyleSheet.create({
     fontFamily: "poppinsLight",
     fontWeight: "200",
     marginBottom: 20,
+  },
+
+  BoxPassword: {
+    flexDirection: "row",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "space-around",
+    height: 30,
+    marginBottom: 40,
+  },
+
+  fieldpass: {
+    borderRadius: 10,
+    padding: 5,
+    backgroundColor: "#000",
+  },
+
+  fieldpassSelected: {
+    borderRadius: 10,
+    padding: 10,
+    backgroundColor: "#000",
   },
 });

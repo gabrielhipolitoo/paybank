@@ -1,10 +1,11 @@
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { Button, FlatList, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import NumbersKeyBoard from "@/componentes/numbersKeyBoard";
 import { Feather } from "@expo/vector-icons";
 import { colors } from "@/utils/colors";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import { ViewDefault } from "@/componentes/ViewDefault/ViewDefault";
+import { passwordFields } from "@/utils/passwordField";
 
 type KeyboardTypes = {
   type: "label" | "action";
@@ -12,6 +13,9 @@ type KeyboardTypes = {
 };
 
 export default function Password() {
+  const [statePass, setStatePass] = useState<string[]>([]);
+  console.log(statePass);
+  const arrayPassword = new Array(3);
   const arrayNumber: KeyboardTypes[] = [
     { type: "label", label: 1 },
     { type: "label", label: 2 },
@@ -23,23 +27,50 @@ export default function Password() {
     { type: "label", label: 8 },
     { type: "label", label: 9 },
     { type: "label", label: 0 },
-    { type: "label", label: 0 },
     { type: "action", label: "delete" },
   ];
 
   function renderitem({ item }: { item: KeyboardTypes }) {
     if (item.type === "label") {
-      return <NumbersKeyBoard key={item.label} number={item.label as number} />;
+      return (
+        <NumbersKeyBoard
+          statePass={statePass}
+          setStatePass={setStatePass}
+          key={item.label}
+          number={item.label as number}
+        />
+      );
     }
 
     if (item.type === "action") {
       return (
         <TouchableOpacity key={item.label}>
-          <Feather name="delete" color={colors.brand} size={30}/>
+          <Feather name="delete" color={colors.brand} size={30} />
         </TouchableOpacity>
       );
     }
     return null;
+  }
+
+  function selectedButton() {
+    passwordFields.map(({ id }, fieldSelected) => {
+      statePass.map(({}, passwordSelected) => {
+        if (fieldSelected === passwordSelected) {
+          return (
+            <View key={id} style={styles.fieldpass}>
+              b
+            </View>
+          );
+        }
+      });
+
+      return (
+        <View key={id} style={styles.fieldpass}>
+          ff
+        </View>
+      );
+    });
+    return <Text>Value</Text>;
   }
 
   return (
@@ -52,7 +83,9 @@ export default function Password() {
           color={colors.brand}
         />
         <Text style={styles.paragraph}>Digite sua senha para acessar</Text>
-        
+
+        <View style={styles.BoxPassword}>{selectedButton()}</View>
+
         <FlatList
           data={arrayNumber}
           numColumns={3}
@@ -68,10 +101,8 @@ export default function Password() {
           }}
         />
         <Feather />
-        <TouchableOpacity>
-          <Feather name="delete" />
-        </TouchableOpacity>
       </View>
+      <Button title="zerar valor" onPress={() => setStatePass([])}></Button>
     </ViewDefault>
   );
 }

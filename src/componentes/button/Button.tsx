@@ -9,7 +9,7 @@ import {
 type ButtonTypes = TouchableOpacityProps & {
   text: string;
   typeButton?: "line" | "default";
-  redirection?: keyof ReactNavigation.RootParamList;
+  redirection: keyof ReactNavigation.RootParamList;
 };
 
 export default function Button({
@@ -19,8 +19,9 @@ export default function Button({
   ...rest
 }: ButtonTypes) {
   const { navigate } = useNavigation();
+
   function handleNavigate() {
-    if (redirection) navigate(redirection);
+    navigate(redirection);
   }
 
   return (
